@@ -39,7 +39,7 @@ const BookContainer = () => {
       {
         isInsertBook && <BookForm books={books} setBooks={setBooks} setIsInsertBook={setIsInsertBook}/>
       }
-      <BookListContainer books={books}/>
+      <BookListContainer books={books} setBooks={setBooks}/>
     </Box>
   )
 }

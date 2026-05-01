@@ -14,10 +14,11 @@ interface Book {
 }
 
 interface BookListProps{
-  books: Book[]
+  books: Book[],
+  setBooks(arg:object):void
 }
 
-const BookListContainer = ({books}: BookListProps) => {
+const BookListContainer = ({books, setBooks}: BookListProps) => {
   const isListEmpty:boolean = books.length === 0;
 
   const [isDisplay, setIsDisplay] = useState<number|null>(null)
@@ -61,14 +62,13 @@ const BookListContainer = ({books}: BookListProps) => {
                       {item.bookName} by {item.authorName}
                     </Typography>
                   </Box>
-                  {isDisplay === item.id && <BookDetails data={item}/>}
+                  {isDisplay === item.id && <BookDetails data={item} books={books} setBooks={setBooks}/>}
                 </div>
               )
             })
           }
       </Stack>
       )}
-      {/* <BookDetails/> */}
     </Box>
   );
 };

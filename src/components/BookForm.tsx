@@ -51,6 +51,12 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
     setIsInsertBook(false);
   }
 
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  const formattedDate = `${year}-${month}-${day}`;
+
   return (
     <Box
       component="form"
@@ -136,7 +142,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
         <Typography sx={{ width: "100px", marginRight: "40px" }}>
           Publish Date
         </Typography>
-        <TextField type="date" sx={{ width: "60%" }} required value={date} onChange={(e)=>{setDate(e.target.value)}}/>
+        <TextField type="date" sx={{ width: "60%" }} required value={date} onChange={(e)=>{setDate(e.target.value)}} slotProps={{htmlInput:{max:formattedDate}}}/>
       </Box>
       <Box
         sx={{
