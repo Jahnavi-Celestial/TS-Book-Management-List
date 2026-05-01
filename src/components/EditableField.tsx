@@ -37,8 +37,8 @@ const EditableField = ({data, label, fieldKey, type = "text", editField, setEdit
   };
 
     return (
-      <Box sx={{ display: "flex", gap: "80px", justifyContent: "center", width: "100%" }}>
-        <Typography sx={{ width: "120px", textAlign: "end", fontWeight: "bold" }}>
+      <Box sx={{ display: "flex", flexDirection: {xs: "column", md: "row"}, gap: {xs: "5px", md: "80px"}, justifyContent: {xs: "flex-start", md: "center"}, width: "100%" }}>
+        <Typography sx={{ width: "120px", textAlign: {xs: "start", md: "end"}, fontWeight: "bold" }}>
           {label}
         </Typography>
 

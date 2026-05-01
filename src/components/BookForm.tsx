@@ -70,6 +70,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
       <Box
         sx={{
           display: "flex",
+          flexDirection: {xs: "column", md: "row"},
           gap: "40px",
           justifyContent: "center",
           alignItems: "center",
@@ -82,7 +83,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
         <TextField
           id="outlined-basic"
           variant="outlined"
-          sx={{ width: "60%" }}
+          sx={{ width: {xs: "100%", md: "60%"} }}
           required
           value={bookName}
           onChange={(e)=>{setBookName(e.target.value)}}
@@ -91,6 +92,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
       <Box
         sx={{
           display: "flex",
+          flexDirection: {xs: "column", md: "row"},
           gap: "40px",
           justifyContent: "center",
           alignItems: "center",
@@ -103,7 +105,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
         <TextField
           id="outlined-basic"
           variant="outlined"
-          sx={{ width: "60%" }}
+          sx={{ width: {xs: "100%", md: "60%"} }}
           required
           value={detail}
           onChange={(e)=>{setDetail(e.target.value)}}
@@ -112,6 +114,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
       <Box
         sx={{
           display: "flex",
+          flexDirection: {xs: "column", md: "row"},
           gap: "40px",
           justifyContent: "center",
           alignItems: "center",
@@ -124,7 +127,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
         <TextField
           id="outlined-basic"
           variant="outlined"
-          sx={{ width: "60%" }}
+          sx={{ width: {xs: "100%", md: "60%"} }}
           required
           value={authorName}
           onChange={(e)=>{setAuthorName(e.target.value)}}
@@ -133,6 +136,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
       <Box
         sx={{
           display: "flex",
+          flexDirection: {xs: "column", md: "row"},
           gap: "40px",
           justifyContent: "center",
           alignItems: "center",
@@ -142,11 +146,12 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
         <Typography sx={{ width: "100px", marginRight: "40px" }}>
           Publish Date
         </Typography>
-        <TextField type="date" sx={{ width: "60%" }} required value={date} onChange={(e)=>{setDate(e.target.value)}} slotProps={{htmlInput:{max:formattedDate}}}/>
+        <TextField type="date" sx={{ width: {xs: "100%", md: "60%"} }} required value={date} onChange={(e)=>{setDate(e.target.value)}} slotProps={{htmlInput:{max:formattedDate}}}/>
       </Box>
       <Box
         sx={{
           display: "flex",
+          flexDirection: {xs: "column", md: "row"},
           gap: "40px",
           justifyContent: "center",
           alignItems: "center",
@@ -156,7 +161,7 @@ const BookForm = ({books,setBooks, setIsInsertBook}: BookFormProps) => {
         <Typography sx={{ width: "100px", marginRight: "40px" }}>
           Price
         </Typography>
-        <TextField type="number" sx={{ width: "60%" }} required value={price} onChange={(e)=>setPrice(e.target.value)}/>
+        <TextField type="number" sx={{ width: {xs: "100%", md: "60%"} }} required value={price} onChange={(e)=>setPrice(e.target.value)}/>
       </Box>
       <Button
         sx={{

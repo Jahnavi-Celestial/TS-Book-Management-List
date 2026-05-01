@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Stack from '@mui/material/Stack';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import BookDetails from "./BookDetails";
 import { useState } from "react";
 
@@ -31,7 +32,7 @@ const BookListContainer = ({books, setBooks}: BookListProps) => {
     <Box
       component="section"
       sx={{
-        p: "40px",
+        p: {xs: "10px", md: "40px"},
         border: "1px solid black",
         marginTop: "50px",
         display: "flex",
@@ -57,7 +58,7 @@ const BookListContainer = ({books, setBooks}: BookListProps) => {
               return (
                 <div key={item.id}> 
                   <Box sx={{border: "1px solid", margin: "10px 0", padding: "10px 0", display: "flex", justifyContent: "flex-start"}} onClick={()=>handleDisplayContent(item.id)}>
-                    <ChevronRightIcon/>
+                    {isDisplay ? <KeyboardArrowDownIcon/> : <ChevronRightIcon/>}
                     <Typography sx={{width: "100%", textAlign: "center"}}>
                       {item.bookName} by {item.authorName}
                     </Typography>
